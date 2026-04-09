@@ -17,30 +17,7 @@ Phrase break prediction is a sequence-labelling task: given a sequence of Tamil 
 
 ## Pipeline Architecture
 
-```
-Raw Corpus (.txt)
-      │
-      ▼
- Data Loading & Parsing          ← 6,365 labelled sentences
-      │
-      ▼
- Class Balancing (Oversampling)  ← SSIL ×6, MSIL ×3 → 24,408 sentences
-      │
-      ▼
- POS Tagging (Stanza / Tamil)    ← UPOS tags: NOUN, VERB, ADP, ADJ …
-      │
-      ▼
- Feature Engineering             ← POS + morphological prefix/suffix n-grams
-      │                             + contextual window (prev/next token)
-      ▼
- CRF Training (L-BFGS)          ← 80/20 train-test split, seed 42
-      │
-      ▼
- Evaluation                      ← Per-class precision, recall, F1
-      │
-      ▼
- Inference                       ← Raw Tamil sentence → per-word labels
-```
+![image alt](https://github.com/Pranav-B-0071/Phrase_Break_Prediction/blob/91c1f9c07bf7e9dd12c3b47b150e6cf00683d146/Pipeline_Architecture.jpg)
 
 ## Features
 
