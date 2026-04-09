@@ -21,7 +21,7 @@ Phrase break prediction is a sequence-labelling task: given a sequence of Tamil 
 
 ## Features
 
-Each word is represented by the following feature vector:
+Each token is represented by the following feature vector:
 
 | Feature | Description |
 |---------|-------------|
